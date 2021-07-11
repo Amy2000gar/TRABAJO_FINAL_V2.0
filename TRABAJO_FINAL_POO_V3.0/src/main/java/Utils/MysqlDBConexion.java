@@ -25,7 +25,7 @@ public class MysqlDBConexion
     Connection con=null;
     try 
     {   //CADENA DE CONEXION	    TIPO DE BD / SERVIDOR / BASE DE DATOS / USUARIO / PASSWORD
-        con=DriverManager.getConnection("jdbc:sqlite:C:/Users/laura/Downloads/sqlitestudio-3.3.3/SQLiteStudio/veterinaria.db");    
+        con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\User\\Documents\\Tareas\\Programación\\Trabajo FInal/veterinaria.db");
     }
     catch (Exception e) 
     {
