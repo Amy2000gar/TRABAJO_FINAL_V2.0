@@ -7,5 +7,6 @@ public class Main
     {
         Principal principal = new Principal();
         principal.setVisible(true);
+        System.out.println("Hola....");
     }
 }
