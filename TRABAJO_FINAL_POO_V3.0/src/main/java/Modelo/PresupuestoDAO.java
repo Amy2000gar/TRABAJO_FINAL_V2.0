@@ -25,8 +25,10 @@ public class PresupuestoDAO implements BaseDAO<Presupuesto>
         {   //ABRE CONEXION CON BASE DE DATOS
             conn = MysqlDBConexion.getConexion();
             //SENTENCIA SQL LANZAMOS A BASE DE DATOS
-            String sql ="SELECT distinct nombreClie, apellidoClie, nomServicio, precio, "
-                    + "fecha, descripcion from cliente c inner join servicio s inner join presupuesto p on p.idCliente= c.idCliente where fecha between '"+fecha1+"' AND '"+fecha2+"';";
+            String sql ="SELECT distinct nombreClie, apellidoClie, nomServicio, precio,"
+        + "descripcion,  fecha from presupuesto p inner join servicio s inner join cliente c on"
+       +"p.idCliente = c.idCliente and  p.idServicio = s.idServicio where fecha between '"+fecha1+"' AND '"+fecha2+"';";
+           
             //EJECUTAMOS SENTENCIA SQL
             pstm = conn.prepareStatement(sql);
             //LECTURA DE LOS DATOS QUE DEVUELVE LA BD
