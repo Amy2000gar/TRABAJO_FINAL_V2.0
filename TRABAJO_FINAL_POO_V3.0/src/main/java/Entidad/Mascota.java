@@ -4,16 +4,16 @@ public class Mascota extends Cliente
 {
     //ATRIBUTOS
     private String raza,color,tamaño;
-    private int peso;
+    private String peso;
     //CONSTRUCTORES
-    public Mascota(String raza, String color, String tamaño, int peso) {
+    public Mascota(String raza, String color, String tamaño, String peso) {
         this.raza = raza;
         this.color = color;
         this.tamaño = tamaño;
         this.peso = peso;
     }
 
-    public Mascota(String nombres,String DNI,String raza, String color, String tamaño, int peso) {
+    public Mascota(String nombres,String DNI,String raza, String color, String tamaño, String peso) {
         super(nombres, DNI);
         this.raza = raza;
         this.color = color;
@@ -47,11 +47,11 @@ public class Mascota extends Cliente
         this.tamaño = tamaño;
     }
 
-    public int getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
     

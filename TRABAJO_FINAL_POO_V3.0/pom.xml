@@ -22,7 +22,7 @@
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
     </properties>
-    <name>TRABAJO_FINAL_V2.0</name>
+    <name>TRABAJO_FINAL_V3.0</name>
     <repositories>
         <repository>
             <id>unknown-jars-temp-repo</id>

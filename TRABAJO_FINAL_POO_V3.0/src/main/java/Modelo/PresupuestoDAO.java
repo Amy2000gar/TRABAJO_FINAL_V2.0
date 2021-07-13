@@ -76,8 +76,9 @@ public class PresupuestoDAO implements BaseDAO<Presupuesto>
         {   //ABRE CONEXION CON BASE DE DATOS
             conn = MysqlDBConexion.getConexion();
             //SENTENCIA SQL LANZAMOS A BASE DE DATOS
-            String sql ="SELECT nombreClie, apellidoClie, nomServicio, precio, "
-                    + "fecha, descripcion from cliente c inner join servicio s inner join presupuesto p on p.idCliente= c.idCliente where nombreClie like 'a%';";
+            String sql ="SELECT distinct nombreClie, apellidoClie, nomServicio, precio,"
+        + "descripcion,  fecha from presupuesto p inner join servicio s inner join cliente c on"
+       +"p.idCliente = c.idCliente and  p.idServicio = s.idServicio;";
             //EJECUTAMOS SENTENCIA SQL
             pstm = conn.prepareStatement(sql);
             //LECTURA DE LOS DATOS QUE DEVUELVE LA BD
@@ -93,8 +94,8 @@ public class PresupuestoDAO implements BaseDAO<Presupuesto>
                 objPresupuesto.setApellidoC(rs.getString("apellidoClie"));
                 objPresupuesto.setNombreS(rs.getString("nomServicio"));
                 objPresupuesto.setPrecioS(rs.getDouble("precio"));
-                objPresupuesto.setFechaI(rs.getString("fecha"));
                 objPresupuesto.setDescripcionS(rs.getString("descripcion"));
+                objPresupuesto.setFechaI(rs.getString("fecha"));
                 //COPIAMOS OBJETO A LA LISTA    
             	listaPresupuestos.add(objPresupuesto);      //COLECCION DE OBJETOS DEVUELTOS POR LA CONSULTA
             }

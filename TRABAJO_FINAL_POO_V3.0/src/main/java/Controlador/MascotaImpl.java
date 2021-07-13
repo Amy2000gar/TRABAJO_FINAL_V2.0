@@ -1,6 +1,7 @@
 package Controlador;
 
 import Entidad.Mascota;
+import Modelo.MascotaDAO;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,7 +21,8 @@ public class MascotaImpl implements IControlador<Mascota>
 
     @Override
     public int insertar(Mascota objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MascotaDAO modeloMascota = new MascotaDAO();
+        return modeloMascota.insertar(objeto);
     }
 
     @Override
